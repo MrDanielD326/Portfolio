@@ -25,7 +25,7 @@ export function Experience() {
         </motion.div>
 
         <div className="max-w-6xl mx-auto space-y-8">
-          {config.experience.map((item, index) => (
+          {config.experience.map((item, index) =>
             <motion.div
               key={index}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
@@ -52,11 +52,15 @@ export function Experience() {
                     <div className="space-y-2 text-sm text-[#888888]">
                       <div className="flex items-center gap-2">
                         <Calendar className="w-4 h-4" />
-                        <span> {item.period} </span>
+                        <span>
+                          {item.period}
+                        </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <MapPin className="w-4 h-4" />
-                        <span> {item.location} </span>
+                        <span>
+                          {item.location}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -67,33 +71,36 @@ export function Experience() {
                       {item.description}
                     </p>
 
-                    {item.achievements && (
+                    {item.achievements &&
                       <div>
                         <h5 className="text-[#E0E0E0] font-semibold mb-3">
                           Key Achievements:
                         </h5>
                         <ul className="space-y-2">
-                          {item.achievements.map((achievement, achIndex) => (
+                          {item.achievements.map((achievement, achIndex) =>
                             <motion.li
                               key={achIndex}
                               className="flex items-start gap-3 text-[#B0B0B0] text-sm"
                               initial={{ opacity: 0, x: 20 }}
                               whileInView={{ opacity: 1, x: 0 }}
-                              transition={{ delay: index * 0.2 + achIndex * 0.1 }}
+                              transition={{
+                                delay: index * 0.2 + achIndex * 0.1
+                              }}
                               viewport={{ once: true }}
                             >
                               <span className="text-[#888888] mt-1"> • </span>
-                              <span> {achievement} </span>
+                              <span>
+                                {achievement}
+                              </span>
                             </motion.li>
-                          ))}
+                          )}
                         </ul>
-                      </div>
-                    )}
+                      </div>}
                   </div>
                 </div>
               </GlassCard>
             </motion.div>
-          ))}
+          )}
         </div>
       </div>
     </section>

@@ -28,9 +28,8 @@ export default function Home() {
       <footer className="py-6 md:py-8 border-t border-[#444444]">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <p className="text-[#B0B0B0] text-sm md:text-base flex items-center justify-center gap-1">
-            <Copyright className="w-4 h-4" /> {new Date().getFullYear()}
-            {config.personal.name} | {config.personal.title} | Building digital
-            experiences with modern technologies 🧑‍💻
+            <Copyright className="w-4 h-4" /> {new Date().getFullYear()} 🧑‍💻{" "}
+            {config.personal.name} | {config.personal.title}
           </p>
         </div>
       </footer>

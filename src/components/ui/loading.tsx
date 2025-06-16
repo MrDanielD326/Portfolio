@@ -18,13 +18,15 @@ export function LoadingScreen() {
     };
   }, []);
 
+  const welcomeNote = `Transforming ideas into digital realities... ⚡`;
+
   // Prevent flash of content
   if (!mounted) {
     return (
       <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background">
         <div className="text-center">
           <p className="text-muted-foreground text-lg font-medium">
-            Welcome! ✨ Loading your digital experience...
+            {welcomeNote}
           </p>
         </div>
       </div>
@@ -33,7 +35,7 @@ export function LoadingScreen() {
 
   return (
     <AnimatePresence>
-      {isVisible && (
+      {isVisible &&
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -49,15 +51,18 @@ export function LoadingScreen() {
             >
               <motion.p
                 animate={{ opacity: [0.5, 1, 0.5], scale: [0.98, 1, 0.98] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
                 className="text-muted-foreground text-lg font-medium"
               >
-                Welcome! ✨ Loading your digital experience...
+                {welcomeNote}
               </motion.p>
             </motion.div>
           </div>
-        </motion.div>
-      )}
+        </motion.div>}
     </AnimatePresence>
   );
 }

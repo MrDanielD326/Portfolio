@@ -65,10 +65,12 @@ export const techDocs: Record<string, string> = {
 
   // Essentials
   WebSockets: "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
-  "CRUD Operations": "https://www.codecademy.com/learn/learn-sql/modules/learn-sql-manipulation/cheatsheet",
+  "CRUD Operations":
+    "https://www.codecademy.com/learn/learn-sql/modules/learn-sql-manipulation/cheatsheet",
   "HTTP Methods": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods",
-  JSON: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+  JSON:
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
   CMS: "https://www.contentful.com/developers/docs/",
   Bash: "https://www.gnu.org/software/bash/manual/bash.html",
-  PowerShell: "https://learn.microsoft.com/en-us/powershell/",
+  PowerShell: "https://learn.microsoft.com/en-us/powershell/"
 };

@@ -15,8 +15,8 @@ export function InteractiveGradient() {
       const { innerWidth, innerHeight } = window;
 
       // Calculate position as percentage
-      const x = (clientX / innerWidth) * 100;
-      const y = (clientY / innerHeight) * 100;
+      const x = clientX / innerWidth * 100;
+      const y = clientY / innerHeight * 100;
 
       // Update gradient position
       gradientRef.current.style.background = `

@@ -35,35 +35,44 @@ export function TechStack() {
     inViewThreshold: 0.7
   });
 
-  useEffect(() => {
-    if (!emblaApi) return;
-    const section = document.getElementById("tech-stack");
-    if (!section) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-        if (entry.isIntersecting) {
-          const autoplay = setInterval(() => {
-            emblaApi.scrollNext();
-          }, 5000);
-          return () => clearInterval(autoplay);
-        }
-      },
-      { threshold: 0.5 }
-    );
-    observer.observe(section);
-    return () => {
-      observer.disconnect();
-    };
-  }, [emblaApi]);
+  useEffect(
+    () => {
+      if (!emblaApi) return;
+      const section = document.getElementById("tech-stack");
+      if (!section) return;
+      const observer = new IntersectionObserver(
+        entries => {
+          const [entry] = entries;
+          if (entry.isIntersecting) {
+            const autoplay = setInterval(() => {
+              emblaApi.scrollNext();
+            }, 3000);
+            return () => clearInterval(autoplay);
+          }
+        },
+        { threshold: 0.5 }
+      );
+      observer.observe(section);
+      return () => {
+        observer.disconnect();
+      };
+    },
+    [emblaApi]
+  );
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
+  const scrollPrev = useCallback(
+    () => {
+      if (emblaApi) emblaApi.scrollPrev();
+    },
+    [emblaApi]
+  );
 
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
+  const scrollNext = useCallback(
+    () => {
+      if (emblaApi) emblaApi.scrollNext();
+    },
+    [emblaApi]
+  );
 
   const openDocsModal = (categoryName: string) => {
     setSelectedCategory(categoryName);
@@ -76,16 +85,21 @@ export function TechStack() {
   };
 
   const getCategoryDocs = (categoryName: string) => {
-    const category = techCategories.find((cat) => cat.name === categoryName);
+    const category = techCategories.find(cat => cat.name === categoryName);
     if (!category) return [];
-    return category.items.map((tech) => ({
+    return category.items.map(tech => ({
       name: tech,
-      url: `https://www.google.com/search?q=${encodeURIComponent(tech)}+official+documentation`
+      url: `https://www.google.com/search?q=${encodeURIComponent(
+        tech
+      )}+official+documentation`
     }));
   };
 
   return (
-    <section className="py-16 md:py-24 bg-black/20 relative overflow-hidden" id="tech-stack">
+    <section
+      className="py-16 md:py-24 bg-black/20 relative overflow-hidden"
+      id="tech-stack"
+    >
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -111,12 +125,16 @@ export function TechStack() {
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             <div className="flex -ml-6 md:-ml-8">
-              {techCategories.map((category, index) => (
+              {techCategories.map((category, index) =>
                 <motion.div
                   key={category.name}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.05, ease: [0.4, 0, 0.2, 1] }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.05,
+                    ease: [0.4, 0, 0.2, 1]
+                  }}
                   viewport={{ once: true, margin: "-100px" }}
                   className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] min-w-0 pl-6 md:pl-8"
                 >
@@ -134,19 +152,26 @@ export function TechStack() {
                       </h3>
                     </motion.div>
                     <div className="flex flex-wrap gap-2 justify-center">
-                      {category.items.map((tech, techIndex) => (
+                      {category.items.map((tech, techIndex) =>
                         <motion.span
                           key={tech}
                           className="glass rounded-full px-3 py-1 text-sm text-[#B0B0B0] hover:bg-white/10 transition-all duration-300"
-                          whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+                          whileHover={{
+                            scale: 1.05,
+                            backgroundColor: "rgba(255, 255, 255, 0.1)"
+                          }}
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: index * 0.1 + techIndex * 0.05, duration: 0.3, ease: "easeOut" }}
+                          transition={{
+                            delay: index * 0.1 + techIndex * 0.05,
+                            duration: 0.3,
+                            ease: "easeOut"
+                          }}
                           viewport={{ once: true }}
                         >
                           {tech}
                         </motion.span>
-                      ))}
+                      )}
                     </div>
                     <motion.button
                       onClick={() => openDocsModal(category.name)}
@@ -159,7 +184,7 @@ export function TechStack() {
                     </motion.button>
                   </GlassCard>
                 </motion.div>
-              ))}
+              )}
             </div>
           </motion.div>
 
@@ -193,9 +218,9 @@ export function TechStack() {
         title={selectedCategory ? `${selectedCategory} Documentation` : ""}
         subtitle="Click below to check out documentations"
       >
-        {selectedCategory && (
+        {selectedCategory &&
           <div className="flex flex-wrap gap-2">
-            {getCategoryDocs(selectedCategory).map((doc) => (
+            {getCategoryDocs(selectedCategory).map(doc =>
               <a
                 key={doc.name}
                 href={doc.url}
@@ -204,11 +229,12 @@ export function TechStack() {
                 className="inline-flex items-center px-3 py-1.5 rounded-lg bg-black/30 hover:bg-black/50 transition-colors text-sm"
               >
                 <BookOpen size={14} className="mr-1.5" />
-                <span className="text-white"> {doc.name} </span>
+                <span className="text-white">
+                  {doc.name}
+                </span>
               </a>
-            ))}
-          </div>
-        )}
+            )}
+          </div>}
       </Modal>
     </section>
   );

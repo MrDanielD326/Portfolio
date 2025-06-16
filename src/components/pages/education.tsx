@@ -30,7 +30,7 @@ export function Education() {
         </motion.div>
 
         <div className="max-w-4xl mx-auto space-y-6">
-          {config.education.map((item, index) => (
+          {config.education.map((item, index) =>
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
@@ -59,11 +59,15 @@ export function Education() {
                     <div className="flex flex-wrap items-center gap-4 text-sm text-[#888888] mb-4">
                       <div className="flex items-center gap-2">
                         <Calendar className="w-4 h-4" />
-                        <span> {item.period} </span>
+                        <span>
+                          {item.period}
+                        </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <MapPin className="w-4 h-4" />
-                        <span> {item.location} </span>
+                        <span>
+                          {item.location}
+                        </span>
                       </div>
                       <button
                         onClick={() => setIsModalOpen(true)}
@@ -79,14 +83,25 @@ export function Education() {
                 </div>
               </GlassCard>
             </motion.div>
-          ))}
+          )}
         </div>
       </div>
 
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Bachelor of Engineering" subtitle="Computer Science and Engineering">
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Bachelor of Engineering"
+        subtitle="Computer Science and Engineering"
+      >
         <div className="flex items-center justify-center w-full p-4">
           <div className="relative w-full max-w-2xl aspect-[4/3]">
-            <Image src="/Graduation.png" alt="BE - CSE - Graduation" fill className="object-contain rounded-lg" quality={100} />
+            <Image
+              src="/Graduation.png"
+              alt="BE - CSE - Graduation"
+              fill
+              className="object-contain rounded-lg"
+              quality={100}
+            />
           </div>
         </div>
       </Modal>

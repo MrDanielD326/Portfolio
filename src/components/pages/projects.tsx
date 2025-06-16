@@ -26,47 +26,52 @@ export function Project() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {config.projects.filter((project) => project.featured).map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
-            >
-              <GlassCard className="h-full">
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-2xl font-serif font-bold text-[#E0E0E0] mb-3">
-                      {project.name}
-                    </h3>
-                    <p className="text-[#B0B0B0] leading-relaxed">
-                      {project.description}
-                    </p>
-                  </div>
+          {config.projects
+            .filter(project => project.featured)
+            .map((project, index) =>
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
+                <GlassCard className="h-full">
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-serif font-bold text-[#E0E0E0] mb-3">
+                        {project.name}
+                      </h3>
+                      <p className="text-[#B0B0B0] leading-relaxed">
+                        {project.description}
+                      </p>
+                    </div>
 
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <motion.span
-                        className="glass rounded-full px-3 py-1 text-sm text-[#888888] hover:text-[#E0E0E0] transition-colors duration-300"
-                        key={tech}
-                        whileHover={{ scale: 1.05 }}
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map(tech =>
+                        <motion.span
+                          className="glass rounded-full px-3 py-1 text-sm text-[#888888] hover:text-[#E0E0E0] transition-colors duration-300"
+                          key={tech}
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          {tech}
+                        </motion.span>
+                      )}
+                    </div>
+
+                    <div className="flex gap-4 pt-4">
+                      <MagneticButton
+                        href={project.github}
+                        className="flex items-center gap-2"
                       >
-                        {tech}
-                      </motion.span>
-                    ))}
+                        <Github className="w-4 h-4" />
+                        Code
+                      </MagneticButton>
+                    </div>
                   </div>
-
-                  <div className="flex gap-4 pt-4">
-                    <MagneticButton href={project.github} className="flex items-center gap-2">
-                      <Github className="w-4 h-4" />
-                      Code
-                    </MagneticButton>
-                  </div>
-                </div>
-              </GlassCard>
-            </motion.div>
-          ))}
+                </GlassCard>
+              </motion.div>
+            )}
         </div>
       </div>
     </section>

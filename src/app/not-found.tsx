@@ -17,7 +17,11 @@ export default function NotFound() {
           <motion.div
             className="text-8xl md:text-9xl font-serif font-bold gradient-text"
             animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+            transition={{
+              duration: 2,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut"
+            }}
           >
             404
           </motion.div>
@@ -27,7 +31,8 @@ export default function NotFound() {
           </h1>
 
           <p className="text-lg text-[#B0B0B0] max-w-md mx-auto">
-            Oops! The page you're looking for seems to have wandered off into the digital void.
+            Oops! The page you're looking for seems to have wandered off into
+            the digital void.
           </p>
         </motion.div>
 
@@ -41,7 +46,10 @@ export default function NotFound() {
             <Home className="w-4 h-4" />
             Go Home
           </MagneticButton>
-          <MagneticButton onClick={() => window.history.back()} className="flex items-center gap-2">
+          <MagneticButton
+            onClick={() => window.history.back()}
+            className="flex items-center gap-2"
+          >
             <ArrowLeft className="w-4 h-4" />
             Go Back
           </MagneticButton>
@@ -49,15 +57,19 @@ export default function NotFound() {
 
         {/* Floating elements */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {Array.from({ length: 10 }, (_, i) => (
+          {Array.from({ length: 10 }, (_, i) =>
             <motion.div
               key={i}
               className="absolute w-2 h-2 bg-[#888888]/30 rounded-full"
               style={{ left: `${i * 10 + 5}%`, top: `${i * 8 + 10}%` }}
               animate={{ y: [0, -100, 0], opacity: [0, 1, 0] }}
-              transition={{ duration: 3 + i * 0.2, repeat: Number.POSITIVE_INFINITY, delay: i * 0.2 }}
+              transition={{
+                duration: 3 + i * 0.2,
+                repeat: Number.POSITIVE_INFINITY,
+                delay: i * 0.2
+              }}
             />
-          ))}
+          )}
         </div>
       </div>
     </div>

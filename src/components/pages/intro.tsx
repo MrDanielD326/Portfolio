@@ -15,22 +15,25 @@ export function Intro() {
   const [isAlternateAvatar, setIsAlternateAvatar] = useState(false);
   const fullText = `Hi, I'm ${config.personal.name}`;
 
-  useEffect(() => {
-    // Add 5 second delay before starting
-    const delayTimer = setTimeout(() => {
-      let i = 0;
-      const timer = setInterval(() => {
-        if (i < fullText.length) {
-          setText(fullText.slice(0, i + 1));
-          i++;
-        } else {
-          clearInterval(timer);
-        }
-      }, 100);
-      return () => clearInterval(timer);
-    }, 3250);
-    return () => clearTimeout(delayTimer);
-  }, [fullText]);
+  useEffect(
+    () => {
+      // Add 5 second delay before starting
+      const delayTimer = setTimeout(() => {
+        let i = 0;
+        const timer = setInterval(() => {
+          if (i < fullText.length) {
+            setText(fullText.slice(0, i + 1));
+            i++;
+          } else {
+            clearInterval(timer);
+          }
+        }, 100);
+        return () => clearInterval(timer);
+      }, 3250);
+      return () => clearTimeout(delayTimer);
+    },
+    [fullText]
+  );
 
   return (
     <section
@@ -106,7 +109,10 @@ export function Intro() {
                   document.body.appendChild(link);
                   link.click();
                   document.body.removeChild(link);
-                  toast({ title: "Success!", description: "Resume downloaded successfully" });
+                  toast({
+                    title: "Success!",
+                    description: "Resume downloaded successfully"
+                  });
                 }}
               >
                 Resume
@@ -124,7 +130,11 @@ export function Intro() {
             <motion.div
               className="relative"
               animate={{ y: [0, -20, 0] }}
-              transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+              transition={{
+                duration: 6,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut"
+              }}
             >
               <Image
                 src={isAlternateAvatar ? "/DanielD.png" : "/DanielDAvatar.png"}
@@ -139,13 +149,21 @@ export function Intro() {
               <motion.div
                 className="absolute inset-0 border-2 border-[#888888]/30 rounded-full"
                 animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                transition={{
+                  duration: 20,
+                  repeat: Number.POSITIVE_INFINITY,
+                  ease: "linear"
+                }}
                 style={{ scale: 1.1 }}
               />
               <motion.div
                 className="absolute inset-0 border border-[#888888]/20 rounded-full"
                 animate={{ rotate: -360 }}
-                transition={{ duration: 15, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                transition={{
+                  duration: 15,
+                  repeat: Number.POSITIVE_INFINITY,
+                  ease: "linear"
+                }}
                 style={{ scale: 1.2 }}
               />
             </motion.div>

@@ -19,11 +19,13 @@ export function BackToTop() {
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
-  const scrollToTop = () => { window.scrollTo({ top: 0, behavior: "smooth" }) };
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <AnimatePresence>
-      {isVisible && (
+      {isVisible &&
         <motion.button
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -34,8 +36,7 @@ export function BackToTop() {
           whileTap={{ scale: 0.9 }}
         >
           <ArrowUp className="w-6 h-6 text-[#E0E0E0]" />
-        </motion.button>
-      )}
+        </motion.button>}
     </AnimatePresence>
   );
 }

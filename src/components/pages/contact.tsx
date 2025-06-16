@@ -55,7 +55,11 @@ export function Contact() {
                     Get In Touch
                   </h3>
                   <p className="text-[#B0B0B0] leading-relaxed text-sm md:text-base max-w-2xl mx-auto">
-                    Whether discussing an exciting project or exploring the latest in technology, I'm eager to connect with fellow developers and innovators. Let's dive into ideas that drive impactful solutions and advancements, fostering collaboration and innovation
+                    Whether discussing an exciting project or exploring the
+                    latest in technology, I'm eager to connect with fellow
+                    developers and innovators. Let's dive into ideas that drive
+                    impactful solutions and advancements, fostering
+                    collaboration and innovation
                   </p>
                 </div>
 
