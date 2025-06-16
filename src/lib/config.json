@@ -1,0 +1,217 @@
+{
+  "personal": {
+    "name": "Daniel D",
+    "title": "Software Developer",
+    "tagline": "Crafting elegant web solutions with modern tech stack, focusing on performance and user experience",
+    "bio": "Software Developer passionate about creating impactful digital experiences. Building robust, scalable applications that transform challenges into elegant solutions. Delivering high-performance products through clean code and thoughtful architecture. Advocate for user-centric design and collaborative development",
+    "email": "daniel.elohi326@gmail.com",
+    "resume": "https://drive.google.com/uc?export=download&id=1FRI94pRwzVUkijwYlYm8vZQaP2kMXZQo"
+  },
+  "social": {
+    "github": "https://github.com/MrDanielD326",
+    "linkedin": "https://www.linkedin.com/in/danield326",
+    "instagram": "https://www.instagram.com/mr__daniel__d/"
+  },
+  "modalContent": {
+    "cleanCode": {
+      "title": "Clean Code Principles",
+      "content": {
+        "intro": "Clean code is the foundation of maintainable and scalable software development and here's why it matters:",
+        "points": [
+          "Improved readability and maintainability for long-term project success",
+          "Reduced technical debt and easier debugging",
+          "Better collaboration among team members",
+          "Faster onboarding for new developers",
+          "Higher code quality and fewer bugs"
+        ],
+        "conclusion": "I follow DRY (Don't Repeat Yourself) principle, and maintain consistent coding standards to ensure clean, efficient code"
+      }
+    },
+    "performance": {
+      "title": "Performance Optimization",
+      "content": {
+        "intro": "Performance optimization is crucial for delivering exceptional user experiences:",
+        "points": [
+          "Faster load times and smoother interactions",
+          "Reduced server costs and better resource utilization",
+          "Improved SEO rankings and user engagement",
+          "Better mobile experience and battery efficiency",
+          "Competitive advantage in the market"
+        ],
+        "conclusion": "I implement various optimization techniques including code splitting, lazy loading, caching strategies, and performance monitoring to ensure optimal application performance"
+      }
+    },
+    "scalability": {
+      "title": "Scalability Architecture",
+      "content": {
+        "intro": "Scalability is essential for growing applications and businesses:",
+        "points": [
+          "Handles increasing user loads without performance degradation",
+          "Supports business growth and feature expansion",
+          "Efficient resource utilization and cost management",
+          "High availability and fault tolerance",
+          "Future-proof architecture design"
+        ],
+        "conclusion": "I design systems with scalability in mind, implementing microservices architecture, load balancing, and cloud-native solutions when appropriate"
+      }
+    }
+  },
+  "techStack": {
+    "languages": [
+      "JavaScript",
+      "TypeScript",
+      "Python"
+    ],
+    "frontend": [
+      "React.js",
+      "Next.js",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "Bootstrap",
+      "Fluent UI",
+      "Ant Design",
+      "ShadCN",
+      "Hero UI"
+    ],
+    "backend": [
+      "Node.js",
+      "Express.js",
+      "GraphQL",
+      "RESTful APIs",
+      "JWT"
+    ],
+    "databases": [
+      "MongoDB",
+      "SQL"
+    ],
+    "testing": [
+      "Jest",
+      "Cypress"
+    ],
+    "tools": [
+      "Git",
+      "GitHub",
+      "GitLab",
+      "Postman",
+      "Vite",
+      "NPM",
+      "Storybook",
+      "VS Code",
+      "PyCharm",
+      "Anaconda"
+    ],
+    "devops": [
+      "AWS",
+      "Docker",
+      "Linux",
+      "CI/CD",
+      "GitHub Actions"
+    ],
+    "design": [
+      "Figma",
+      "Canva",
+      "Framer"
+    ],
+    "ai": [
+      "ChatGPT",
+      "Gemini",
+      "Google AI Studio",
+      "Bolt",
+      "V0",
+      "Cursor"
+    ],
+    "essentials": [
+      "JWT",
+      "WebSockets",
+      "CRUD Operations",
+      "HTTP Methods",
+      "JSON",
+      "CMS",
+      "Bash",
+      "PowerShell"
+    ]
+  },
+  "projects": [
+    {
+      "id": "tickets",
+      "name": "Tickets",
+      "description": "A secure MERN stack task management system with JWT authentication, protected routes, and real-time updates via WebSockets, featuring modular TypeScript code and Git version control for efficient progress tracking",
+      "github": "https://github.com/MrDanielD326/Tickets",
+      "tech": [
+        "React.js",
+        "Node.js",
+        "MongoDB",
+        "TypeScript",
+        "JWT"
+      ],
+      "featured": true
+    },
+    {
+      "id": "vaultro",
+      "name": "Vaultro",
+      "description": "A robust backend-only system built with TypeScript featuring hot reload, secure authentication, session-based access control, and seamless database connectivity for reliable, scalable operations",
+      "github": "https://github.com/MrDanielD326/Vaultro",
+      "tech": [
+        "TypeScript",
+        "Node.js",
+        "Authentication",
+        "Database"
+      ],
+      "featured": true
+    }
+  ],
+  "experience": [
+    {
+      "type": "work",
+      "title": "Engineering Trainee",
+      "company": "HFN IT Services PVT LTD - Nanoheal",
+      "location": "Bengaluru, Karnataka, India",
+      "period": "11/2023 - 05/2025",
+      "description": "Developed high-performance React.js dashboards, built design systems, created reusable component libraries, and integrated GraphQL APIs, including deployment automation and cross-team collaboration initiatives",
+      "achievements": [
+        "Significantly improved application performance through frontend optimization",
+        "Implemented comprehensive design system reducing UI inconsistencies",
+        "Accelerated development workflow through component reusability",
+        "Enhanced data fetching efficiency through modern API integration",
+        "Streamlined deployment process through automation"
+      ]
+    },
+    {
+      "type": "work",
+      "title": "Data Science Intern",
+      "company": "Audaz Learning",
+      "location": "Bengaluru, Karnataka, India",
+      "period": "09/2022 - 10/2022",
+      "description": "Contributed to data preparation, cleaning, and analysis while developing interactive visualizations for actionable insights and decision-making",
+      "achievements": [
+        "Created data visualization solutions for business insights",
+        "Implemented robust data quality assurance measures",
+        "Handled data processing and analysis initiatives"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "type": "education",
+      "title": "Bachelor of Engineering - Computer Science and Engineering",
+      "company": "ATME College of Engineering",
+      "location": "Mysuru, Karnataka, India",
+      "period": "08/2018 - 06/2023",
+      "description": "Mastered core computer science concepts including algorithms, data structures, and software engineering while excelling in web technologies and system architecture, leading multiple collaborative projects and securing top positions in coding competitions to demonstrate both technical prowess and leadership capabilities"
+    }
+  ],
+  "skills": [
+    "Agile Development",
+    "Precision-Driven Data Interpretation",
+    "Cross-Functional Synergy",
+    "User-Centric Approach",
+    "Clear Articulation",
+    "Context Switching",
+    "Collective Ownership",
+    "Iterative Delivery",
+    "Conflict Resolution",
+    "Time Optimization",
+    "Stakeholder Management"
+  ]
+}
