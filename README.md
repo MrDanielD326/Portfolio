@@ -2,6 +2,11 @@
 
 A modern, responsive portfolio website built with Next.js 15, React 19, and Tailwind CSS. This project showcases a professional portfolio with a focus on performance and user experience.
 
+🔗 **Portfolio:** [Click here](https://daniel-d-portfolio.netlify.app/)
+
+![Portfolio Home Page](src/docs/Home.png)
+
+
 ## 🚀 Features
 
 - Built with Next.js 15 and React 19
