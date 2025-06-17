@@ -173,15 +173,6 @@ export function TechStack() {
                         </motion.span>
                       )}
                     </div>
-                    <motion.button
-                      onClick={() => openDocsModal(category.name)}
-                      className="absolute bottom-3 right-3 flex items-center gap-1.5 px-2.5 py-1 text-sm font-bold text-[#B0B0B0] hover:text-white transition-colors"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      Docs
-                    </motion.button>
                   </GlassCard>
                 </motion.div>
               )}
