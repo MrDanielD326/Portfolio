@@ -1,4 +1,4 @@
-# Portfolio Website
+# Portfolio
 
 A modern, responsive portfolio website built with Next.js 15, React 19, and Tailwind CSS. This project showcases a professional portfolio with a focus on performance and user experience.
 
@@ -35,7 +35,6 @@ A modern, responsive portfolio website built with Next.js 15, React 19, and Tail
 1. Clone the repository:
 ```bash
 git clone https://github.com/MrDanielD326/Portfolio.git
-cd portfolio
 ```
 
 2. Install dependencies:
