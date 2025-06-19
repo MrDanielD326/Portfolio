@@ -82,7 +82,7 @@ export function Navbar() {
                           : "text-[#B0B0B0] hover:bg-[#1a1a1a]/30 hover:text-[#E0E0E0]"}`}
                       >
                         <motion.div
-                          whileHover={{ scale: 1.2, rotate: 5 }}
+                          whileHover={{ scale: 1.1}}
                           transition={{
                             type: "spring",
                             stiffness: 400,
@@ -144,16 +144,17 @@ export function Navbar() {
                       : "text-[#B0B0B0] hover:text-[#E0E0E0]"}`}
                   >
                     <motion.div
-                      whileHover={{ scale: 1.2, rotate: 5 }}
+                      whileHover={{ scale: 1.1 }}
                       transition={{
                         type: "spring",
                         stiffness: 400,
                         damping: 10
                       }}
+                      className="flex items-center gap-1"
                     >
                       <item.icon className="h-4 w-4" />
+                      {item.name}
                     </motion.div>
-                    {item.name}
                     {activeSection === item.href.substring(1) &&
                       <motion.div
                         layoutId="activeSection"
