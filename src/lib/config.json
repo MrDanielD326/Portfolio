@@ -134,15 +134,30 @@
   },
   "projects": [
     {
+      "id": "stoxian",
+      "name": "Stoxian",
+      "description": "A responsive MERN stack dashboard for tracking stock portfolios, offering real-time market insights, interactive charts, and a seamless user experience",
+      "github": "https://github.com/MrDanielD326/Stoxian",
+      "tech": [
+        "Next.js",
+        "Node.js",
+        "TypeScript",
+        "Recharts",
+        "Tanstack"
+      ],
+      "featured": true,
+      "link": "https://stoxian.netlify.app/"
+    },
+    {
       "id": "tickets",
       "name": "Tickets",
-      "description": "A secure MERN stack task management system with JWT authentication, protected routes, and real-time updates via WebSockets, featuring modular TypeScript code and Git version control for efficient progress tracking",
+      "description": "A secure MERN stack task management system with JWT authentication, protected routes, and real-time updates via WebSockets, featuring modular JavaScript code and Git version control for efficient progress tracking",
       "github": "https://github.com/MrDanielD326/Tickets",
       "tech": [
         "React.js",
         "Node.js",
         "MongoDB",
-        "TypeScript",
+        "JavaScript",
         "JWT"
       ],
       "featured": true
