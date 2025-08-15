@@ -71,7 +71,7 @@ export function Education() {
                       </div>
                       <button
                         onClick={() => setIsModalOpen(true)}
-                        className="text-[#888888] hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
+                        className="text-[#888888] hover:text-foreground transition-colors p-2 rounded-full hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-black/10"
                       >
                         <ExternalLink className="w-5 h-5" />
                       </button>

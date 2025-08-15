@@ -41,7 +41,7 @@ export function MagneticButton({ children, className = "", onClick, href }: Magn
         onClick={onClick}
         target={href && href.startsWith("http") ? "_blank" : undefined}
         rel={href && href.startsWith("http") ? "noopener noreferrer" : undefined}
-        className={`glass rounded-lg px-4 md:px-6 py-2 md:py-3 text-sm md:text-base font-medium text-[#E0E0E0] hover:bg-white/10 transition-all duration-300 ${className}`}
+        className={`glass rounded-lg px-4 md:px-6 py-2 md:py-3 text-sm md:text-base font-medium text-foreground hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-black/10 transition-all duration-300 ${className}`}
         data-magnetic
       >
         {children}

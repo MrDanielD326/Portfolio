@@ -22,36 +22,39 @@ const config: Config = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "#0A0A0A",
-        foreground: "#E0E0E0",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
         primary: {
-          DEFAULT: "#888888",
-          foreground: "#E0E0E0"
+          DEFAULT: "var(--primary)",
+          foreground: "var(--primary-foreground)"
         },
         secondary: {
-          DEFAULT: "#B0B0B0",
-          foreground: "#121212"
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--secondary-foreground)"
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))"
         },
         muted: {
-          DEFAULT: "#444444",
-          foreground: "#B0B0B0"
+          DEFAULT: "var(--muted)",
+          foreground: "var(--muted-foreground)"
         },
         accent: {
-          DEFAULT: "#888888",
-          foreground: "#E0E0E0"
+          DEFAULT: "var(--accent)",
+          foreground: "var(--accent-foreground)"
         },
         popover: {
-          DEFAULT: "#121212",
-          foreground: "#E0E0E0"
+          DEFAULT: "var(--popover)",
+          foreground: "var(--popover-foreground)"
         },
         card: {
-          DEFAULT: "#121212",
-          foreground: "#E0E0E0"
+          DEFAULT: "var(--card)",
+          foreground: "var(--card-foreground)"
         },
+        "text-primary": "var(--text-primary)",
+        "text-secondary": "var(--text-secondary)",
+        "text-muted": "var(--text-muted)",
       },
       fontFamily: {
         serif: ["var(--font-serif)"],

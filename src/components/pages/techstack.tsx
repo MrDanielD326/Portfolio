@@ -147,7 +147,7 @@ export function TechStack() {
                       <div className="text-3xl md:text-4xl mb-2">
                         {category.icon}
                       </div>
-                      <h3 className="text-lg md:text-xl font-semibold text-[#E0E0E0]">
+                      <h3 className="text-lg md:text-xl font-semibold text-foreground">
                         {category.name}
                       </h3>
                     </motion.div>
@@ -155,7 +155,7 @@ export function TechStack() {
                       {category.items.map((tech, techIndex) =>
                         <motion.span
                           key={tech}
-                          className="glass rounded-full px-3 py-1 text-sm text-[#B0B0B0] hover:bg-white/10 transition-all duration-300"
+                          className="glass rounded-full px-3 py-1 text-sm text-muted-foreground hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-black/10 transition-all duration-300"
                           whileHover={{
                             scale: 1.05,
                             backgroundColor: "rgba(255, 255, 255, 0.1)"
@@ -181,7 +181,7 @@ export function TechStack() {
 
           <motion.button
             onClick={scrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black/90 text-white p-3 rounded-full transition-all duration-300 z-10 shadow-lg hover:shadow-xl"
+            className="absolute left-0 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black/90 dark:bg-black/70 dark:hover:bg-black/90 light:bg-white/70 light:hover:bg-white/90 text-white dark:text-white light:text-black p-3 rounded-full transition-all duration-300 z-10 shadow-lg hover:shadow-xl"
             aria-label="Previous slide"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -192,7 +192,7 @@ export function TechStack() {
 
           <motion.button
             onClick={scrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black/90 text-white p-3 rounded-full transition-all duration-300 z-10 shadow-lg hover:shadow-xl"
+            className="absolute right-0 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black/90 dark:bg-black/70 dark:hover:bg-black/90 light:bg-white/70 light:hover:bg-white/90 text-white dark:text-white light:text-black p-3 rounded-full transition-all duration-300 z-10 shadow-lg hover:shadow-xl"
             aria-label="Next slide"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -220,7 +220,7 @@ export function TechStack() {
                 className="inline-flex items-center px-3 py-1.5 rounded-lg bg-black/30 hover:bg-black/50 transition-colors text-sm"
               >
                 <BookOpen size={14} className="mr-1.5" />
-                <span className="text-white">
+                <span className="text-white dark:text-white light:text-black">
                   {doc.name}
                 </span>
               </a>

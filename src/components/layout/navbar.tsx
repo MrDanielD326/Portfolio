@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Menu, Home, User, Briefcase, Mail } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { useIsMobile } from "@/hooks/use-mobile";
 import config from "@/lib/config.json";
 
@@ -50,19 +51,21 @@ export function Navbar() {
             <span className="text-xl sm:text-2xl font-serif font-bold gradient-text">
               {config.personal.name}
             </span>
-            <span className="text-[#888888]"> | </span>
-            <span className="text-xs sm:text-sm text-[#B0B0B0] font-medium">
+            <span className="text-primary"> | </span>
+            <span className="text-xs sm:text-sm text-muted-foreground font-medium">
               {config.personal.title}
             </span>
           </motion.div>
 
           {isMobile
-            ? <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="md:hidden">
-                    <Menu className="h-6 w-6" />
-                  </Button>
-                </SheetTrigger>
+            ? <div className="flex items-center gap-2">
+                <ThemeToggle />
+                <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                  <SheetTrigger asChild>
+                    <Button variant="ghost" size="icon" className="md:hidden">
+                      <Menu className="h-6 w-6" />
+                    </Button>
+                  </SheetTrigger>
                 <SheetContent
                   className="w-[280px] bg-background border-l border-[#888888]/20"
                   side="right"
@@ -132,7 +135,8 @@ export function Navbar() {
                     )}
                   </div>
                 </SheetContent>
-              </Sheet>
+                </Sheet>
+              </div>
             : <div className="flex items-center space-x-4 md:space-x-8">
                 {navItems.map(item =>
                   <a
@@ -140,8 +144,8 @@ export function Navbar() {
                     href={item.href}
                     className={`relative flex items-center gap-2 text-sm md:text-base font-medium transition-colors duration-300 ${activeSection ===
                     item.href.substring(1)
-                      ? "text-[#E0E0E0]"
-                      : "text-[#B0B0B0] hover:text-[#E0E0E0]"}`}
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"}`}
                   >
                     <motion.div
                       whileHover={{ scale: 1.1 }}
@@ -158,10 +162,11 @@ export function Navbar() {
                     {activeSection === item.href.substring(1) &&
                       <motion.div
                         layoutId="activeSection"
-                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#888888]"
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
                       />}
                   </a>
                 )}
+                <ThemeToggle />
               </div>}
         </div>
       </div>

@@ -33,16 +33,16 @@ export function FeatureCard({
           <div className="text-4xl mb-4">
             {icon}
           </div>
-          <h3 className="text-xl font-semibold mb-3 text-[#E0E0E0]">
+          <h3 className="text-xl font-semibold mb-3 text-foreground">
             {title}
           </h3>
-          <p className="text-[#B0B0B0] mb-4">
+          <p className="text-muted-foreground mb-4">
             {description}
           </p>
           <div className="text-right">
             <button
               onClick={() => onOpenModal(modalKey)}
-              className="text-white hover:text-gray-300 transition-colors text-sm font-medium"
+              className="text-foreground hover:text-muted-foreground transition-colors text-sm font-medium"
             >
               Why?
             </button>

@@ -37,7 +37,7 @@ export function Modal({
           >
             <GlassCard className="p-6" hover={false}>
               <button
-                className="absolute top-4 right-4 text-[#666] hover:text-white transition-colors"
+                className="absolute top-4 right-4 text-[#666] hover:text-foreground transition-colors"
                 onClick={onClose}
               >
                 <X size={24} />

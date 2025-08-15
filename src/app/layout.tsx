@@ -43,7 +43,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="apple-touch-icon" href="/DanielDAvatar.png" />
       </head>
       <body className={`${inter.variable} ${dmSerifDisplay.variable} font-sans antialiased min-h-screen bg-background text-foreground`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeProvider 
+          attribute="class" 
+          defaultTheme="dark" 
+          enableSystem={false} 
+          disableTransitionOnChange
+          storageKey="theme"
+        >
           <div className="relative">
             <LoadingScreen />
             <div className="relative">
