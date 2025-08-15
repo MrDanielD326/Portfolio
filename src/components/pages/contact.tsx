@@ -50,7 +50,10 @@ export function Contact() {
             <GlassCard>
               <div className="p-6 md:p-8">
                 <div className="text-center mb-8">
-                  <div className="text-4xl md:text-5xl mb-4"> 👋 </div>
+                  <div className="flex justify-center items-center mb-4">
+                    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" alt="Waving Hand" width="50" height="50"/>
+                  </div>
+
                   <h3 className="text-xl md:text-2xl font-serif font-bold text-[#E0E0E0] mb-4">
                     Get In Touch
                   </h3>

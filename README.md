@@ -4,7 +4,8 @@ A modern, responsive portfolio website built with Next.js 15, React 19, and Tail
 
 🔗 **Portfolio:** [Click here](https://daniel-d-portfolio.netlify.app/)
 
-![Portfolio Home Page](src/docs/Home.png)
+![Portfolio Home Page - Dark Mode](src/docs/HomeDark.png)
+![Portfolio Home Page - Light Mode](src/docs/HomeLight.png)
 
 
 ## 🚀 Features
