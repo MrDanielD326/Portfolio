@@ -12,7 +12,7 @@ import Image from "next/image";
 export function Intro() {
   const { toast } = useToast();
   const [text, setText] = useState("");
-  const fullText = config.personal.name;
+  const fullText = `Hi, I'm ${config.personal.name}`;
 
   useEffect(() => {
     // Add 5 second delay before starting

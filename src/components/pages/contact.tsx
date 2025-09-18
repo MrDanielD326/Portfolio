@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { GlassCard } from "@/components/ui/glassCard";
 import { MagneticButton } from "@/components/ui/magnetic-buttons";
-import { Github, Linkedin, Instagram, Mail, Copy, Check } from "lucide-react";
+import { Github, Linkedin, Instagram, Mail, Copy, Check, Phone } from "lucide-react";
 import config from "@/lib/config.json";
 
 export function Contact() {
@@ -14,6 +14,10 @@ export function Contact() {
     await navigator.clipboard.writeText(config.personal.email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handlePhoneCall = () => {
+    window.location.href = config.personal.phone;
   };
 
   const socialLinks = [
@@ -50,42 +54,40 @@ export function Contact() {
             <GlassCard>
               <div className="p-6 md:p-8">
                 <div className="text-center mb-8">
-                  <div className="flex justify-center items-center mb-4">
-                    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" alt="Waving Hand" width="50" height="50"/>
-                  </div>
-
                   <h3 className="text-xl md:text-2xl font-serif font-bold text-[#E0E0E0] mb-4">
                     Get In Touch
                   </h3>
                   <p className="text-[#B0B0B0] leading-relaxed text-sm md:text-base max-w-2xl mx-auto">
-                    Whether discussing an exciting project or exploring the
-                    latest in technology, I'm eager to connect with fellow
-                    developers and innovators. Let's dive into ideas that drive
-                    impactful solutions and advancements, fostering
-                    collaboration and innovation
+                    Whether discussing an exciting project or exploring the latest in technology, I'm eager to connect with fellow developers and innovators. Let's dive into ideas that drive impactful solutions and advancements, fostering collaboration and innovation
                   </p>
                 </div>
 
                 <div className="space-y-8">
-                  {/* Email Section */}
-                  <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
-                    <Mail
-                      className="w-5 h-5 text-[#888888] flex-shrink-0"
-                      href={`mailto:${config.personal.email}`}
-                    />
-                    <div className="flex-1 min-w-0">
-                      <p className="text-[#B0B0B0] break-all text-xs md:text-base">
-                        {config.personal.email}
-                      </p>
+                  {/* Contact Methods Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* Phone Section */}
+                    <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors cursor-pointer" onClick={handlePhoneCall}>
+                      <Phone className="w-5 h-5 text-[#888888] flex-shrink-0" />
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-[#E0E0E0] mb-1"> Phone - Let's talk about your ideas </p>
+                      </div>
                     </div>
-                    <button
-                      className="glass rounded-lg p-2 hover:bg-white/10 transition-all duration-300 flex-shrink-0"
-                      onClick={copyEmail}
-                    >
-                      {copied
-                        ? <Check className="w-4 h-4 text-green-400" />
-                        : <Copy className="w-4 h-4 text-[#888888]" />}
-                    </button>
+
+                    {/* Email Section */}
+                    <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                      <Mail className="w-5 h-5 text-[#888888] flex-shrink-0" />
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-[#E0E0E0] mb-1">
+                          {config.personal.email}
+                        </p>
+                      </div>
+                      <button
+                        className="glass rounded-lg p-2 hover:bg-white/10 transition-all duration-300 flex-shrink-0"
+                        onClick={copyEmail}
+                      >
+                        {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4 text-[#888888]" />}
+                      </button>
+                    </div>
                   </div>
 
                   {/* Social Links */}

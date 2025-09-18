@@ -5,7 +5,8 @@
     "tagline": "Crafting reliable and intuitive applications that are designed to transform ideas into seamless and engaging digital experiences that users can trust",
     "bio": "Software Developer passionate about creating impactful digital experiences. Building robust, scalable applications that transform challenges into elegant solutions. Delivering high-performance products through clean code and thoughtful architecture. Advocate for user-centric design and collaborative development",
     "email": "daniel.elohi326@gmail.com",
-    "resume": "https://drive.google.com/file/d/1UeHsXXFcKj7D6UxKI2GllBu1OIlqF53M/view"
+    "resume": "https://drive.google.com/file/d/1UeHsXXFcKj7D6UxKI2GllBu1OIlqF53M/view",
+    "phone": "tel:+917259041077"
   },
   "social": {
     "github": "https://github.com/MrDanielD326",
@@ -138,7 +139,7 @@
     {
       "id": "topotrace",
       "name": "Topotrace",
-      "description": "A 3D network dashboard with Next.js, Three.js, and WebGL, visualizing real-time cryptocurrency exchange latency with historical analytics, filtering, and glass-morphism UI",
+      "description": "A 3D world map of exchange servers and tracks real-time and past latency across AWS, GCP, and Azure regions, helping visualize cryptocurrency trading performance",
       "github": "https://github.com/MrDanielD326/Latency-Topology-Visualizer",
       "tech": [
         "Next.js",
@@ -150,7 +151,7 @@
       "featured": true,
       "link": "https://topotrace.netlify.app/"
     },
-        {
+    {
       "id": "stoxian",
       "name": "Stoxian",
       "description": "A responsive MERN stack dashboard for tracking stock portfolios, offering real-time market insights, interactive charts, and a seamless user experience",
