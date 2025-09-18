@@ -12,28 +12,24 @@ import Image from "next/image";
 export function Intro() {
   const { toast } = useToast();
   const [text, setText] = useState("");
-  const [isAlternateAvatar, setIsAlternateAvatar] = useState(false);
   const fullText = `Hi, I'm ${config.personal.name}`;
 
-  useEffect(
-    () => {
-      // Add 5 second delay before starting
-      const delayTimer = setTimeout(() => {
-        let i = 0;
-        const timer = setInterval(() => {
-          if (i < fullText.length) {
-            setText(fullText.slice(0, i + 1));
-            i++;
-          } else {
-            clearInterval(timer);
-          }
-        }, 100);
-        return () => clearInterval(timer);
-      }, 3250);
-      return () => clearTimeout(delayTimer);
-    },
-    [fullText]
-  );
+  useEffect(() => {
+    // Add 5 second delay before starting
+    const delayTimer = setTimeout(() => {
+      let i = 0;
+      const timer = setInterval(() => {
+        if (i < fullText.length) {
+          setText(fullText.slice(0, i + 1));
+          i++;
+        } else {
+          clearInterval(timer);
+        }
+      }, 100);
+      return () => clearInterval(timer);
+    }, 3250);
+    return () => clearTimeout(delayTimer);
+  }, [fullText]);
 
   return (
     <section
@@ -70,15 +66,6 @@ export function Intro() {
                 transition={{ delay: 0.5 }}
               >
                 {config.personal.title}
-                {/* Toggle Avatar Button */}
-                <motion.button
-                  onClick={() => setIsAlternateAvatar(!isAlternateAvatar)}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="ml-2"
-                >
-                  <UserCircle className="w-6 h-6" />
-                </motion.button>
               </motion.h2>
 
               <motion.p
@@ -137,7 +124,7 @@ export function Intro() {
               }}
             >
               <Image
-                src={isAlternateAvatar ? "/DanielD.png" : "/DanielDAvatar.png"}
+                src="/DanielDAvatar.png"
                 alt={config.personal.name}
                 width={400}
                 height={400}

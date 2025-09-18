@@ -119,7 +119,8 @@
       "Google AI Studio",
       "Bolt",
       "V0",
-      "Cursor"
+      "Cursor",
+      "Warp"
     ],
     "essentials": [
       "JWT",
@@ -134,6 +135,21 @@
   },
   "projects": [
     {
+      "id": "topotrace",
+      "name": "Topotrace",
+      "description": "A 3D network dashboard with Next.js, Three.js, and WebGL, visualizing real-time cryptocurrency exchange latency with historical analytics, filtering, and glass-morphism UI",
+      "github": "https://github.com/MrDanielD326/Latency-Topology-Visualizer",
+      "tech": [
+        "Next.js",
+        "Node.js",
+        "TypeScript",
+        "Three.js",
+        "Recharts"
+      ],
+      "featured": true,
+      "link": "https://topotrace.netlify.app/"
+    },
+        {
       "id": "stoxian",
       "name": "Stoxian",
       "description": "A responsive MERN stack dashboard for tracking stock portfolios, offering real-time market insights, interactive charts, and a seamless user experience",
