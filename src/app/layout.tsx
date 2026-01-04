@@ -1,5 +1,5 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
 import { DM_Serif_Display, Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/themes";
@@ -29,24 +29,28 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: `${config.personal.name} | ${config.personal.title}`,
   description: config.personal.bio,
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
-  themeColor: "#000000",
   icons: { icon: "/DanielDAvatar.png", apple: "/DanielDAvatar.png" }
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: "#000000"
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <link rel="icon" href="/DanielDAvatar.png" />
         <link rel="apple-touch-icon" href="/DanielDAvatar.png" />
       </head>
       <body className={`${inter.variable} ${dmSerifDisplay.variable} font-sans antialiased min-h-screen bg-background text-foreground`}>
-        <ThemeProvider 
-          attribute="class" 
-          defaultTheme="dark" 
-          enableSystem={false} 
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
           storageKey="theme"
         >
