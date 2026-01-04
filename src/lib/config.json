@@ -5,7 +5,7 @@
     "tagline": "Crafting reliable and intuitive applications that are designed to transform ideas into seamless and engaging digital experiences that users can trust",
     "bio": "Software Developer passionate about creating impactful digital experiences. Building robust, scalable applications that transform challenges into elegant solutions. Delivering high-performance products through clean code and thoughtful architecture. Advocate for user-centric design and collaborative development",
     "email": "daniel.elohi326@gmail.com",
-    "resume": "https://drive.google.com/file/d/1UeHsXXFcKj7D6UxKI2GllBu1OIlqF53M/view",
+    "resume": "https://drive.google.com/file/d/12SwrlHaWXVCRBJ9cYC65oItXtW78Ztqe/view",
     "phone": "tel:+917259041077"
   },
   "social": {
@@ -197,10 +197,26 @@
   "experience": [
     {
       "type": "work",
+      "title": "Full Stack Developer",
+      "company": "DealYouNeed",
+      "location": "Bengaluru, Karnataka, India",
+      "period": "10/2025 - Present",
+      "description": "Developing and maintaining scalable full-stack web applications, including an admin platform and a public-facing website, with a strong focus on performance, clean architecture, and business-driven feature delivery.",
+      "achievements": [
+        "Designed and built a role-based admin panel with complete CRUD workflows",
+        "Developed scalable backend APIs to support real-time operations",
+        "Optimized application performance using a modular, maintainable architecture",
+        "Built a responsive, high-performance public-facing website",
+        "Implemented end-to-end features aligned with business requirements",
+        "Integrated APIs and managed database interactions for reliable data flow"
+      ]
+    },
+    {
+      "type": "work",
       "title": "Engineering Trainee",
       "company": "HFN IT Services PVT LTD - Nanoheal",
       "location": "Bengaluru, Karnataka, India",
-      "period": "11/2023 - 05/2025",
+      "period": "11/2023 - 10/2025",
       "description": "Developed high-performance React.js dashboards, built design systems, created reusable component libraries, and integrated GraphQL APIs, including deployment automation and cross-team collaboration initiatives",
       "achievements": [
         "Significantly improved application performance through frontend optimization",
