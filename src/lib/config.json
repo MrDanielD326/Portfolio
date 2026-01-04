@@ -80,7 +80,8 @@
       "Express.js",
       "GraphQL",
       "RESTful APIs",
-      "JWT"
+      "JWT",
+      "Auth0"
     ],
     "databases": [
       "MongoDB",
