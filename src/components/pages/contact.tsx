@@ -1,30 +1,58 @@
 "use client";
 
-import { useState } from "react";
+import { ComponentType, MouseEvent, useState } from "react";
 import { motion } from "framer-motion";
 import { GlassCard } from "@/components/ui/glassCard";
 import { MagneticButton } from "@/components/ui/magnetic-buttons";
 import { Github, Linkedin, Instagram, Mail, Copy, Check, Phone } from "lucide-react";
 import config from "@/lib/config.json";
 
+type iContact = {
+  icon: ComponentType<{ className?: string }>;
+  text: string;
+  value: string;
+  click: () => void;
+  copy: (e: MouseEvent<HTMLButtonElement>) => void;
+};
+
 export function Contact() {
   const [copied, setCopied] = useState(false);
 
-  const copyEmail = async () => {
-    await navigator.clipboard.writeText(config.personal.email);
+  const {
+    personal: { phone, email }, social: { github, linkedin, instagram }, contact
+  } = config;
+
+  const copy = (text: string) => async (e: MouseEvent) => {
+    e.stopPropagation();
+    await navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handlePhoneCall = () => {
-    window.location.href = config.personal.phone;
+  const connect = (scheme: "tel" | "mailto") => (value: string) => () => {
+    window.location.href = `${scheme}:${value}`
   };
 
   const socialLinks = [
-    { name: "GitHub", icon: Github, href: config.social.github },
-    { name: "LinkedIn", icon: Linkedin, href: config.social.linkedin },
-    { name: "Instagram", icon: Instagram, href: config.social.instagram }
+    { name: "GitHub", icon: Github, href: github },
+    { name: "LinkedIn", icon: Linkedin, href: linkedin },
+    { name: "Instagram", icon: Instagram, href: instagram }
   ];
+
+  const ContactMe = ({ icon: Icon, text, click, copy }: iContact) => (
+    <div
+      className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors cursor-pointer"
+      onClick={click}
+    >
+      <Icon className="w-5 h-5 text-[#888888] flex-shrink-0" />
+      <div className="flex-1 min-w-0">
+        <p className="text-sm font-medium text-[#E0E0E0] mb-1"> {text} </p>
+      </div>
+      <button className="glass rounded-lg p-2 hover:bg-white/10 transition-all duration-300 flex-shrink-0" onClick={copy}>
+        {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4 text-[#888888]" />}
+      </button>
+    </div>
+  );
 
   return (
     <section id="contact" className="py-16 md:py-20 bg-black/20">
@@ -54,58 +82,30 @@ export function Contact() {
             <GlassCard>
               <div className="p-6 md:p-8">
                 <div className="text-center mb-8">
-                  <h3 className="text-xl md:text-2xl font-serif font-bold text-[#E0E0E0] mb-4">
-                    Get In Touch
-                  </h3>
-                  <p className="text-[#B0B0B0] leading-relaxed text-sm md:text-base max-w-2xl mx-auto">
-                    Whether discussing an exciting project or exploring the latest in technology, I'm eager to connect with fellow developers and innovators. Let's dive into ideas that drive impactful solutions and advancements, fostering collaboration and innovation
-                  </p>
+                  <h3 className="text-xl md:text-2xl font-serif font-bold text-[#E0E0E0] mb-4"> Get In Touch </h3>
+                  <p className="text-[#B0B0B0] leading-relaxed text-sm md:text-base max-w-2xl mx-auto"> {contact} </p>
                 </div>
 
                 <div className="space-y-8">
                   {/* Contact Methods Grid */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {/* Phone Section */}
-                    <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors cursor-pointer" onClick={handlePhoneCall}>
-                      <Phone className="w-5 h-5 text-[#888888] flex-shrink-0" />
-                      <div className="flex-1">
-                        <p className="text-sm font-medium text-[#E0E0E0] mb-1"> Phone - Let's talk about your ideas </p>
-                      </div>
-                    </div>
-
-                    {/* Email Section */}
-                    <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
-                      <Mail className="w-5 h-5 text-[#888888] flex-shrink-0" />
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-[#E0E0E0] mb-1">
-                          {config.personal.email}
-                        </p>
-                      </div>
-                      <button
-                        className="glass rounded-lg p-2 hover:bg-white/10 transition-all duration-300 flex-shrink-0"
-                        onClick={copyEmail}
-                      >
-                        {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4 text-[#888888]" />}
-                      </button>
-                    </div>
+                    <ContactMe icon={Phone} text="Schedule a quick call" value={phone} click={connect("tel")(phone)} copy={copy(phone)} />
+                    <ContactMe icon={Mail} text="Send me a message" value={email} click={connect("mailto")(email)} copy={copy(email)} />
                   </div>
 
                   {/* Social Links */}
                   <div>
-                    <h4 className="text-sm font-medium text-[#888888] mb-4 text-center">
-                      Connect on Social Media
-                    </h4>
+                    <h4 className="text-sm font-medium text-[#888888] mb-4 text-center"> Connect on Social Media </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                      {socialLinks.map(social =>
+                      {socialLinks.map(({ name, href, icon: Icon }) => (
                         <MagneticButton
-                          key={social.name}
-                          href={social.href}
+                          key={name}
+                          href={href}
                           className="flex items-center gap-2 justify-center text-sm hover:bg-white/10 transition-colors"
                         >
-                          <social.icon className="w-4 h-4" />
-                          {social.name}
+                          <Icon className="w-4 h-4" /> {name}
                         </MagneticButton>
-                      )}
+                      ))}
                     </div>
                   </div>
                 </div>
