@@ -67,83 +67,113 @@
     }
   },
   "techStack": {
-    "languages": [
-      "JavaScript",
-      "TypeScript",
-      "Python"
-    ],
-    "frontend": [
-      "React.js",
-      "Next.js",
-      "HTML5",
-      "CSS3",
-      "Tailwind CSS",
-      "Bootstrap",
-      "Fluent UI",
-      "Ant Design",
-      "ShadCN",
-      "Hero UI"
-    ],
-    "backend": [
-      "Node.js",
-      "Express.js",
-      "GraphQL",
-      "RESTful APIs",
-      "JWT",
-      "Auth0"
-    ],
-    "databases": [
-      "MongoDB",
-      "SQL",
-      "PostgreSQL"
-    ],
-    "testing": [
-      "Jest",
-      "Cypress"
-    ],
-    "tools": [
-      "Git",
-      "GitHub",
-      "GitLab",
-      "Postman",
-      "Vite",
-      "NPM",
-      "Storybook",
-      "VS Code",
-      "PyCharm",
-      "Anaconda"
-    ],
-    "devops": [
-      "AWS",
-      "Docker",
-      "Linux",
-      "CI/CD",
-      "GitHub Actions"
-    ],
-    "design": [
-      "Figma",
-      "Canva",
-      "Framer"
-    ],
-    "ai": [
-      "ChatGPT",
-      "Gemini",
-      "Google AI Studio",
-      "Bolt",
-      "V0",
-      "Cursor",
-      "Warp"
-    ],
-    "essentials": [
-      "JWT",
-      "WebSockets",
-      "CRUD Operations",
-      "HTTP Methods",
-      "JSON",
-      "CMS",
-      "Bash",
-      "PowerShell"
-    ]
+    "languages": {
+      "logo": "💻",
+      "tools": [
+        "JavaScript",
+        "TypeScript",
+        "Python"
+      ]
+    },
+    "frontend": {
+      "logo": "🎨",
+      "tools": [
+        "React.js",
+        "Next.js",
+        "HTML5",
+        "CSS3",
+        "Tailwind CSS",
+        "Bootstrap",
+        "Fluent UI",
+        "Ant Design",
+        "ShadCN",
+        "Hero UI"
+      ]
+    },
+    "backend": {
+      "logo": "⚙️",
+      "tools": [
+        "Node.js",
+        "Express.js",
+        "GraphQL",
+        "RESTful APIs",
+        "JWT",
+        "Auth0"
+      ]
+    },
+    "databases": {
+      "logo": "🗄️",
+      "tools": [
+        "MongoDB",
+        "SQL",
+        "PostgreSQL"
+      ]
+    },
+    "testing": {
+      "logo": "🧪",
+      "tools": [
+        "Jest",
+        "Cypress"
+      ]
+    },
+    "tools": {
+      "logo": "🛠️",
+      "tools": [
+        "Git",
+        "GitHub",
+        "GitLab",
+        "Postman",
+        "Vite",
+        "NPM",
+        "Storybook",
+        "VS Code",
+        "PyCharm",
+        "Anaconda"
+      ]
+    },
+    "devops": {
+      "logo": "☁️",
+      "tools": [
+        "AWS",
+        "Docker",
+        "Linux",
+        "CI/CD",
+        "GitHub Actions"
+      ]
+    },
+    "design": {
+      "logo": "🎨",
+      "tools": [
+        "Figma",
+        "Canva",
+        "Framer"
+      ]
+    },
+    "ai": {
+      "logo": "🤖",
+      "tools": [
+        "ChatGPT",
+        "Gemini",
+        "Google AI Studio",
+        "Bolt",
+        "V0",
+        "Cursor",
+        "Warp"
+      ]
+    },
+    "essentials": {
+      "logo": "🔑",
+      "tools": [
+        "JWT",
+        "WebSockets",
+        "CRUD Operations",
+        "HTTP Methods",
+        "JSON",
+        "CMS",
+        "Bash",
+        "PowerShell"
+      ]
+    }
   },
   "projects": [
     {

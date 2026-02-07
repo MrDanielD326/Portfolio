@@ -10,18 +10,22 @@ import config from "@/lib/config.json";
 
 const { languages, frontend, backend, databases, tools, testing, devops, ai, design, essentials } = config.techStack;
 
-const techCategories = [
-  { name: "Languages", items: languages, icon: "💻" },
-  { name: "Frontend", items: frontend, icon: "🎨" },
-  { name: "Backend", items: backend, icon: "⚙️" },
-  { name: "Databases", items: databases, icon: "🗄️" },
-  { name: "Tools", items: tools, icon: "🛠️" },
-  { name: "Testing", items: testing, icon: "🧪" },
-  { name: "DevOps & Cloud", items: devops, icon: "☁️" },
-  { name: "AI Tools", items: ai, icon: "🤖" },
-  { name: "Design", items: design, icon: "🎨" },
-  { name: "Essentials", items: essentials, icon: "🔑" }
-];
+const techStack = {
+  Languages: languages,
+  Frontend: frontend,
+  Backend: backend,
+  Databases: databases,
+  Tools: tools,
+  Testing: testing,
+  "DevOps & Cloud": devops,
+  "AI Tools": ai,
+  Design: design,
+  Essentials: essentials,
+};
+
+const techCategories = Object.entries(techStack).map(([name, stack]) => ({
+  name, items: stack.tools, icon: stack.logo,
+}));
 
 export function TechStack() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -76,17 +80,12 @@ export function TechStack() {
     if (!category) return [];
     return category.items.map(tech => ({
       name: tech,
-      url: `https://www.google.com/search?q=${encodeURIComponent(
-        tech
-      )}+official+documentation`
+      url: `https://www.google.com/search?q=${encodeURIComponent(tech)}+official+documentation`
     }));
   };
 
   return (
-    <section
-      id="tech-stack"
-      className="py-16 md:py-24 bg-black/20 relative overflow-hidden"
-    >
+    <section id="tech-stack" className="py-16 md:py-24 bg-black/20 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -126,8 +125,8 @@ export function TechStack() {
                 >
                   <GlassCard className="h-full p-5 relative hover:scale-105 transition-transform duration-300">
                     <div className="text-center mb-4">
-                      <div className="text-4xl mb-2">{category.icon}</div>
-                      <h3 className="text-xl font-semibold text-foreground">{category.name}</h3>
+                      <div className="text-4xl mb-2"> {category.icon} </div>
+                      <h3 className="text-xl font-semibold text-foreground"> {category.name} </h3>
                     </div>
                     <div className="flex flex-wrap gap-2 justify-center">
                       {category.items.map((tech, techIndex) => (
@@ -190,7 +189,7 @@ export function TechStack() {
                 className="inline-flex items-center px-3 py-2 rounded-lg bg-black/30 hover:bg-black/50 transition-colors text-sm"
               >
                 <BookOpen size={14} className="mr-2" />
-                <span className="text-white">{doc.name}</span>
+                <span className="text-white"> {doc.name} </span>
               </a>
             ))}
           </div>
