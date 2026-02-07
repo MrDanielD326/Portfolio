@@ -13,14 +13,7 @@ interface FeatureCardProps {
   delay: number;
 }
 
-export function FeatureCard({
-  icon,
-  title,
-  description,
-  modalKey,
-  onOpenModal,
-  delay
-}: FeatureCardProps) {
+export function FeatureCard({ icon, title, description, modalKey, onOpenModal, delay }: FeatureCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -30,21 +23,15 @@ export function FeatureCard({
     >
       <GlassCard>
         <div className="text-center">
-          <div className="text-4xl mb-4">
-            {icon}
-          </div>
-          <h3 className="text-xl font-semibold mb-3 text-foreground">
-            {title}
-          </h3>
-          <p className="text-muted-foreground mb-4">
-            {description}
-          </p>
+          <div className="text-4xl mb-4"> {icon} </div>
+          <h3 className="text-xl font-semibold mb-3 text-foreground"> {title} </h3>
+          <p className="text-muted-foreground mb-4"> {description} </p>
           <div className="text-right">
             <button
               onClick={() => onOpenModal(modalKey)}
               className="text-foreground hover:text-muted-foreground transition-colors text-sm font-medium"
             >
-              Why?
+              Why..?
             </button>
           </div>
         </div>

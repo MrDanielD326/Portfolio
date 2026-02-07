@@ -15,7 +15,10 @@
   },
   "modalContent": {
     "cleanCode": {
+      "logo": "✨",
+      "main": "Clean Code",
       "title": "Clean Code Principles",
+      "subtitle": "Writing maintainable, readable code that follows best practices and industry standards",
       "content": {
         "intro": "Clean code is the foundation of maintainable and scalable software development and here's why it matters:",
         "points": [
@@ -29,7 +32,10 @@
       }
     },
     "performance": {
+      "logo": "🚀",
+      "main": "Performance",
       "title": "Performance Optimization",
+      "subtitle": "Optimizing applications for speed, efficiency, and an exceptional user experiences",
       "content": {
         "intro": "Performance optimization is crucial for delivering exceptional user experiences:",
         "points": [
@@ -43,7 +49,10 @@
       }
     },
     "scalability": {
+      "logo": "📈",
+      "main": "Scalability",
       "title": "Scalability Architecture",
+      "subtitle": "Building robust systems that grow seamlessly with your business needs and user demands",
       "content": {
         "intro": "Scalability is essential for growing applications and businesses:",
         "points": [
